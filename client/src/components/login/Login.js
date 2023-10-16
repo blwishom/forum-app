@@ -4,7 +4,7 @@ import "./Login.css";
 import { useAuth } from "../../service/AuthContextProvider";
 
 const Login = ({ setIsLoggedIn }) => {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -15,12 +15,12 @@ const Login = ({ setIsLoggedIn }) => {
   const handleLogin = async (e) => {
     e.preventDefault();
     const requestObject = {
-      username: username,
+      email: email,
       password: password,
     };
 
     try {
-      const response = await fetch("http://localhost:8080/login", {
+      const response = await fetch("http://localhost:8800/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -50,8 +50,8 @@ const Login = ({ setIsLoggedIn }) => {
       <form onSubmit={handleLogin} className="signup-form">
         <input 
           type="text" 
-          placeholder='Username' 
-          onChange={(e) => setUsername(e.target.value)} 
+          placeholder='Email' 
+          onChange={(e) => setEmail(e.target.value)} 
           required
         />
         <input 
