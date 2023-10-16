@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from "react"; 
+import {Routes,Route } from "react-router-dom";
+import Home from "./components/home/Home";
+import Navbar from "./components/navbar/Navbar";
+import Dashboard from "./components/dashboard/Dashboard";
+import Login from "./components/login/Login"; 
+import Signup from "./components/signup/Signup"; 
+import AuthContextProvider from "./service/AuthContextProvider";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [isLoggedIn] = useState(false); 
+  
+    return (
+      
+        <div className="App">
+          <AuthContextProvider value={( isLoggedIn )}>
+          <Navbar/>
+            <Routes>
+              <Route path="/" exact element={<Home/>}/>
+              <Route path="/dashboard" exact element={<Dashboard/>}/>
+              <Route path="/login" exact element={<Login/>}/>
+              <Route path="/signup" exact element={<Signup/>}/>              
+            </Routes>
+          </AuthContextProvider>
+        </div>)
 }
-
-export default App;
+export default App; 

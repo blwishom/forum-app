@@ -1,0 +1,40 @@
+.profile-dropdown {
+    position: absolute;
+}
+
+.hidden {
+  display: none;
+}
+.navbar {
+  background-color: rgb(212, 212, 212);
+  width: 100%; 
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+  padding: 10px;
+  padding-top: 10px;
+}
+
+.nav-menu {
+  display: flex;
+}
+
+li {
+  padding: 0 1rem;
+  list-style-type: none;
+}
+
+li a {
+  text-decoration: none;
+}
+
+li a:hover {
+  font-weight: bold;
+}
+
+.logo {
+  text-decoration: none;
+  font: bold 1.5rem 'Roboto', sans-serif;
+}
