@@ -5,7 +5,7 @@ function Post() {
   const [errorMessage, setErrorMessage] = useState("");
   const [post, setPost] = useState();
   const { post_id } = useParams();
-  const comments = post.comments;
+  const [comments, setComments] = useState();
 
   const getPost = async (e) => {
     try {
@@ -16,7 +16,7 @@ function Post() {
       if (response.ok) {
         const data = await response.json();
         setPost(data.data.post);
-        console.log(post);
+        setComments(data.data.post.comments);
       }
     } catch (error) {
       setErrorMessage("An error occurred. Please try again later.");
@@ -32,12 +32,13 @@ function Post() {
       <div className='post'>
         <h1>Post</h1>
       </div>
+      {post && comments &&
       <div className="post-container">
-        <div className="post-header">
-          <div className="post-author">Posted by {post.author.username}</div>
-          <div className="post-title">{post.title}</div>
-        </div>
-        <div className="post-content">{post.content}</div>
+          <div className="post-header">
+            <div className="post-author">Posted by {post.author.username}</div>
+            <div className="post-title">{post.title}</div>
+          </div>
+          <div className="post-content">{post.content}</div>
         <h4>Comments</h4>
         {comments && comments.map((comment) => (
           <div className="comment-container">
@@ -48,6 +49,7 @@ function Post() {
           </div>
         ))}
       </div>
+      }
     </div>
   )
 }
