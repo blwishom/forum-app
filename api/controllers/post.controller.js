@@ -15,7 +15,6 @@ export const getAllPosts = async (req, res, next) => {
 
 // Get Single Post
 export const getById = async (req, res, next) => {
-  console.log("This is the param: " + req.params.id);
   try {
     const post = await Post.findById(req.params.id)
       .populate({
