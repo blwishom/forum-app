@@ -26,11 +26,12 @@ li {
   list-style-type: none;
 }
 
-li a {
+.nav-btn {
   text-decoration: none;
+  cursor: pointer;
 }
 
-li a:hover {
+.nav-btn:hover {
   font-weight: bold;
 }
 

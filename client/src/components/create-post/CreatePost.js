@@ -6,6 +6,7 @@ const CreatePost = () => {
   const [content, setContent] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const username = localStorage.getItem('username');
   const navigate = useNavigate();
 
   const handleCreatePost = async (e) => {
@@ -13,10 +14,11 @@ const CreatePost = () => {
     const requestObject = {
       title: title,
       content: content,
+      author: username,
     };
 
     try {
-      const response = await fetch('http://localhost:8800/api/post', {
+      const response = await fetch('http://localhost:8800/api/post/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -27,7 +29,7 @@ const CreatePost = () => {
       if (response.ok) {
         setSuccessMessage('Post created.');
         setErrorMessage('');
-        navigate('/dashboard');
+        navigate('/');
       } else {
         setSuccessMessage('');
         setErrorMessage('Post creation failed. Please check your information.');

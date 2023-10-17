@@ -65,7 +65,7 @@ export const createPost = async (req, res, next) => {
           author: foundAuthor,
         });
         await newPost.save();
-        return next(CreateSuccess(200, "Post created successfully!"));
+        return next(CreateSuccess(200, "Post created successfully!", newPost));
       }
     }
   } catch (error) {
