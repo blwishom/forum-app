@@ -32,7 +32,7 @@ const Login = ({ setIsLoggedIn }) => {
         const data = await response.json();
         updateUser(data);
         login(data);
-        navigate("/dashboard");
+        navigate("/");
       } else {
         setSuccessMessage("");
         setErrorMessage("Login failed. Please check your information.");

@@ -3,7 +3,6 @@ import "./Dashboard.css";
 import { Link } from 'react-router-dom';
 
 function Dashboard() {
-  const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [posts, setPosts] = useState();
   const getData = async (e) => {
@@ -15,12 +14,8 @@ function Dashboard() {
       if (response.ok) {
         const data = await response.json();
         setPosts(data.data);
-      } else {
-        setSuccessMessage("Sucessfully logged in.");
-        setErrorMessage("");
-      }
+      } 
     } catch (error) {
-      setSuccessMessage("");
       setErrorMessage("An error occurred. Please try again later.");
     }
   }
@@ -35,6 +30,7 @@ function Dashboard() {
         <h1>Dashboard</h1>
         <Link to={'/create-post'}>Create Post</Link>
       </div>
+      {!posts && <div className='post-header'>No posts found.</div>}
       {posts && posts.map((post) => (
         <div className="post-container">
           <div className="post-header">
