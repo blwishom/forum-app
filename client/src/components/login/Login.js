@@ -31,7 +31,7 @@ const Login = ({ setIsLoggedIn }) => {
       if (response.ok) {
         const data = await response.json();
         localStorage.setItem("user_id", data.data._id);
-        localStorage.setItem("username", JSON.stringify(data.data.username));
+        localStorage.setItem("username", data.data.username);
         updateUser(data);
         login(data);
         navigate("/");

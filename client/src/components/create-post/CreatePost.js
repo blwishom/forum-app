@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import './CreatePost.css';
 
 const CreatePost = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const username = localStorage.getItem('username');
+  const user_id = localStorage.getItem('user_id');
   const navigate = useNavigate();
 
   const handleCreatePost = async (e) => {
@@ -14,11 +15,11 @@ const CreatePost = () => {
     const requestObject = {
       title: title,
       content: content,
-      author: username,
+      user_id: user_id,
     };
 
     try {
-      const response = await fetch('http://localhost:8800/api/post/', {
+      const response = await fetch('http://localhost:8800/api/post', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -31,6 +32,7 @@ const CreatePost = () => {
         setErrorMessage('');
         navigate('/');
       } else {
+        console.log(response);
         setSuccessMessage('');
         setErrorMessage('Post creation failed. Please check your information.');
       }
@@ -38,6 +40,11 @@ const CreatePost = () => {
       setSuccessMessage('');
       setErrorMessage('An error occurred. Please try again later.');
     }
+  }
+
+  const handleCancel = (e) => {
+    e.preventDefault();
+    navigate('/')
   }
 
   return (
@@ -58,7 +65,8 @@ const CreatePost = () => {
           onChange={(e) => setContent(e.target.value)}
           required
         />
-        <button type='submit'>Create Post</button>
+        <button className="create-post-btn" type='submit'>Create Post</button>
+        <button className="create-post-btn" onClick={handleCancel}>Cancel</button>
       </form>
     </div>
   )

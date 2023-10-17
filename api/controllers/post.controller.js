@@ -44,7 +44,6 @@ export const getById = async (req, res, next) => {
       })
     );
   } catch (error) {
-    console.log(error);
     return next(CreateError(500, "Internal Server Error"));
   }
 };
@@ -52,7 +51,7 @@ export const getById = async (req, res, next) => {
 // Create Post
 export const createPost = async (req, res, next) => {
   try {
-    const foundAuthor = await User.findOne({ author: req.body.author });
+    const foundAuthor = await User.findById(req.body.user_id);
     if (!foundAuthor) {
       return next(CreateError(404, "Author not found"));
     } else {
