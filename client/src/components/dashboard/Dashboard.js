@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import "./Dashboard.css";
+import { Link } from 'react-router-dom';
 
 function Dashboard() {
   const [successMessage, setSuccessMessage] = useState("");
@@ -28,13 +29,11 @@ function Dashboard() {
     getData();
   }, [])
 
-  console.log(Array.isArray(posts));
-
   return (
     <div>
       <div className='dashboard'>
         <h1>Dashboard</h1>
-        <button >Create Post</button>
+        <Link to={'/create-post'}>Create Post</Link>
       </div>
       {posts && posts.map((post) => (
         <div className="post-container">
