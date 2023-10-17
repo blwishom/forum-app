@@ -1,0 +1,20 @@
+.dashboard {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-container {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+}
+
+.post-header {
+  align-items: center;
+}
+
+.post-title {
+  font-weight: 600;
+}
+
+.post-author {
+}
