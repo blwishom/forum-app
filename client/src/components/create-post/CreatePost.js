@@ -40,7 +40,7 @@ const CreatePost = () => {
 
   return (
     <div className='create-post-container centered'>
-      <h1>Create Post</h1>
+      <h1 style={{ color: 'orange'}}>Create Post</h1>
       {errorMessage && <div className='error-message'>{errorMessage}</div>}
       {successMessage && <div className='success-message'>{successMessage}</div>}
       <form onSubmit={handleCreatePost} className='create-post-form'>
