@@ -21,37 +21,43 @@
   align-items: center;
   z-index: 2;
   padding: 10px;
-  margin-left: -8px;
+  margin-left: -12px;
+  border-style: solid;
+  border-bottom-color: white;
+  border-top: 0px;
 }
 
 .nav-menu {
   display: flex;
+  text-decoration: none;
 }
 
 li {
   font-weight: bold;
-  font-family: creepster;
+  font-family: 'Creepster';
   padding: 0 1rem;
   list-style-type: none;
   font-size: 25px;
 }
 
 .nav-btn {
-  text-decoration: none;
   color: white;
+  text-decoration: none;
   transition: font-size 0.2s;
   cursor: pointer;
+  border: solid;
+  margin: 5px;
 }
 
 .nav-btn:hover {
   font-weight: bold;
   font-size: 20px;
-  color: greenyellow;
+  background-color: greenyellow;
 }
 
 .logo {
   text-decoration: none;
-  font-size: 50px;
+  font-size: 70px;
   color: purple;
   font-family: 'Creepster';
   src: local('Creepster'), url('../../../public/Creepster-Regular.ttf') format('truetype');
