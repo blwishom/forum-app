@@ -46,11 +46,12 @@ li a {
 }
 
 .nav-btn {
-  color: white;
+  color: purple;
   text-decoration: none;
   transition: font-size 0.2s;
   cursor: pointer;
   border: solid;
+  border-color: white;
   margin: 5px;
 }
 
