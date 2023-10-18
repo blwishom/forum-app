@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Creepster';
+  src: url('/home/blair/cognixia_workspace/jumplus/forum-app/client/public/Creepster-Regular.ttf') format('truetype');
+  font-style: normal;
+  color: purple;
+}
+
 .profile-dropdown {
     position: absolute;
 }
@@ -6,15 +13,15 @@
   display: none;
 }
 .navbar {
-  background-color: rgb(212, 212, 212);
-  width: 100%; 
-  height: 45px;
+  background-color: orange;
+  width: 100%;
+  height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 2;
   padding: 10px;
-  padding-top: 10px;
+  margin-left: -8px;
 }
 
 .nav-menu {
@@ -22,20 +29,30 @@
 }
 
 li {
+  font-weight: bold;
+  font-family: creepster;
   padding: 0 1rem;
   list-style-type: none;
+  font-size: 25px;
 }
 
 .nav-btn {
   text-decoration: none;
+  color: white;
+  transition: font-size 0.2s;
   cursor: pointer;
 }
 
 .nav-btn:hover {
   font-weight: bold;
+  font-size: 20px;
+  color: greenyellow;
 }
 
 .logo {
   text-decoration: none;
-  font: bold 1.5rem 'Roboto', sans-serif;
+  font-size: 50px;
+  color: purple;
+  font-family: 'Creepster';
+  src: url('/home/blair/cognixia_workspace/jumplus/forum-app/client/public/Creepster-Regular.ttf') format('truetype');
 }
