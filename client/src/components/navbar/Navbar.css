@@ -40,6 +40,11 @@ li {
   font-size: 25px;
 }
 
+li a {
+  text-decoration: none;
+  color: purple;
+}
+
 .nav-btn {
   color: white;
   text-decoration: none;
