@@ -4,8 +4,9 @@ import Navbar from "./components/navbar/Navbar";
 import Dashboard from "./components/dashboard/Dashboard";
 import Login from "./components/login/Login";
 import Signup from "./components/signup/Signup";
-import CreatePost from "./components/create-post/CreatePost";
 import Post from "./components/post/Post";
+import CreatePost from "./components/create-post/CreatePost";
+import UpdatePost from "./components/update-post/UpdatePost";
 import AuthContextProvider from "./service/AuthContextProvider";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
               <Route path="/login" exact element={<Login/>}/>
               <Route path="/signup" exact element={<Signup/>}/>
               <Route path="/create-post" exact element={<CreatePost/>}/>
+              <Route path="/update-post" exact element={<UpdatePost/>}/>
             </Routes>
           </AuthContextProvider>
         </div>
