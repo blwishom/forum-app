@@ -39,7 +39,7 @@ li {
 .nav-btn {
   text-decoration: none;
   color: white;
-  transition: font-size 0.2s
+  transition: font-size 0.2s;
   cursor: pointer;
 }
 
