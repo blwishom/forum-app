@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Creepster';
+  src: url('/home/blair/cognixia_workspace/jumplus/forum-app/client/public/Creepster-Regular.ttf') format('truetype');
+  font-style: normal;
+  color: purple;
+}
+
 .profile-dropdown {
     position: absolute;
 }
@@ -23,9 +30,10 @@
 
 li {
   font-weight: bold;
+  font-family: creepster;
   padding: 0 1rem;
   list-style-type: none;
-  font-size: 23px;
+  font-size: 25px;
 }
 
 li a {
@@ -36,12 +44,13 @@ li a {
 
 li a:hover {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .logo {
   text-decoration: none;
-  color: white;
-  font: bold 1.5rem 'Roboto', sans-serif;
-  font-size: 30px;
+  font-size: 50px;
+  color: purple;
+  font-family: 'Creepster';
+  src: url('/home/blair/cognixia_workspace/jumplus/forum-app/client/public/Creepster-Regular.ttf') format('truetype');
 }
