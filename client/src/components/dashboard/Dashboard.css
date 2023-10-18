@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: black;
+  background-color: rgb(83, 0, 83);
   color: white;
   font-family: 'Creepster';
   src: url('/home/blair/cognixia_workspace/jumplus/forum-app/client/public/Creepster-Regular.ttf') format('truetype');
