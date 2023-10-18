@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Creepster';
-  src: url('/home/blair/cognixia_workspace/jumplus/forum-app/client/public/Creepster-Regular.ttf') format('truetype');
+  src: local('Creepster'), url('../../../public/Creepster-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   color: purple;
@@ -10,7 +10,7 @@ body {
   background-color: rgb(83, 0, 83);
   color: white;
   font-family: 'Creepster';
-  src: url('/home/blair/cognixia_workspace/jumplus/forum-app/client/public/Creepster-Regular.ttf') format('truetype');
+  src: local('Creepster'), url('../../../public/Creepster-Regular.ttf') format('truetype');
 }
 
 
