@@ -1,5 +1,6 @@
 import Comment from "../models/Comment.js";
 import User from "../models/Users.js";
+import Post from "../models/Post.js";
 import { CreateSuccess } from "../utils/success.js";
 import { CreateError } from "../utils/error.js";
 
@@ -29,11 +30,11 @@ export const getById = async (req, res, next) => {
 // Create Comment
 export const createComment = async (req, res, next) => {
   try {
-    const foundAuthor = await User.findOne({ author: req.body.author });
+    const foundAuthor = await User.findById(req.body.user_id);
     if (!foundAuthor) {
       return next(CreateError(404, "Author not found"));
     }
-    const foundPost = await Post.findById(req.params.id);
+    const foundPost = await Post.findById(req.params.post_id);
     if (!foundPost) {
       return next(CreateError(404, "Post not found"));
     } else {
@@ -45,11 +46,14 @@ export const createComment = async (req, res, next) => {
           post: foundPost,
           author: foundAuthor
         });
+        foundPost.comments.push(newComment);
+        await foundPost.save();
         await newComment.save();
-        return next(CreateSuccess(201, "Comment created", newComment));
+        return next(CreateSuccess(201, "Comment created", foundPost));
       }
     }
   } catch (error) {
+    console.log(error);
     return next(CreateError(500, "Internal Server Error"));
   }
 }

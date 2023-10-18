@@ -54,12 +54,14 @@ const CreatePost = () => {
       {successMessage && <div className='success-message'>{successMessage}</div>}
       <form onSubmit={handleCreatePost} className='create-post-form'>
         <input
+          className='create-post-input'
           type='text'
           placeholder='Title'
           onChange={(e) => setTitle(e.target.value)}
           required
         />
         <textarea
+          className='create-post-textarea'
           type='text'
           placeholder='Content'
           onChange={(e) => setContent(e.target.value)}

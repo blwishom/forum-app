@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 function Post() {
+  const user_id = localStorage.getItem("user_id");
   const [errorMessage, setErrorMessage] = useState("");
   const [post, setPost] = useState();
   const { post_id } = useParams();
   const [comments, setComments] = useState();
+  const [content, setContent] = useState("");
+  const navigate = useNavigate();
 
   const getPost = async (e) => {
     try {
@@ -22,6 +25,53 @@ function Post() {
       setErrorMessage("An error occurred. Please try again later.");
     }
   }
+
+  const handleCreateComment = async (e) => {
+    e.preventDefault();
+    const requestObject = {
+      content: content,
+      user_id: user_id
+    };
+
+    try {
+      const response = await fetch(`http://localhost:8800/api/post/${post_id}/comment`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(requestObject),
+      });
+
+      if (response.ok) {
+        // Fetch the updated comments for the post
+        const commentsResponse = await fetch(`http://localhost:8800/api/post/${post_id}/comment`);
+        const { comments } = await commentsResponse.json();
+        // Update your UI with the new comments
+        updateUIWithComments(comments);
+        navigate(`/post/${post_id}}`);
+      } else {
+        setErrorMessage('Comment creation failed. Please check your information.');
+      }
+    } catch (error) {
+      setErrorMessage('An error occurred. Please try again later.');
+    }
+  }
+
+  // Function to update UI with comments
+const updateUIWithComments = (comments) => {
+  // Assuming 'commentsContainer' is the container where comments are displayed
+  const commentsContainer = document.getElementById('commentsContainer');
+
+  // Clear existing comments
+  commentsContainer.innerHTML = '';
+
+  // Render the updated comments
+  comments.forEach((comment) => {
+    const commentElement = document.createElement('div');
+    commentElement.innerHTML = `<p>${comment.content}</p>`;
+    commentsContainer.appendChild(commentElement);
+  });
+};
 
   useEffect(() => {
     getPost();
@@ -48,6 +98,16 @@ function Post() {
             <div className="comment-content">{comment.content}</div>
           </div>
         ))}
+        <form onSubmit={handleCreateComment}>
+          <textarea 
+            className="comment-textarea" 
+            type="text"
+            placeholder="Add a comment..."
+            onChange={(e) => setContent(e.target.value)}
+            required
+          />
+          <button className="comment-button">Submit</button>
+        </form>
       </div>
       }
     </div>

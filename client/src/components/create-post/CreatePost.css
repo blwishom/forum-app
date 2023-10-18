@@ -15,7 +15,7 @@ h1 {
   margin-top: 1.2rem;
 }
 
-form input {
+.create-post-input {
   width: 92%;
   outline: none;
   height: 40px;
@@ -25,7 +25,7 @@ form input {
   border-radius: 10px;
   background-color: white;
 }
-form textarea {
+.create-post-textarea {
   width: 92%;
   outline: none;
   height: 350px;
