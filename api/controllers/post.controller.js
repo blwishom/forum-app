@@ -15,7 +15,6 @@ export const getAllPosts = async (req, res, next) => {
 
 // Get Single Post
 export const getById = async (req, res, next) => {
-  console.log("This is the param: " + req.params.id);
   try {
     const post = await Post.findById(req.params.id)
       .populate({
@@ -44,7 +43,6 @@ export const getById = async (req, res, next) => {
       })
     );
   } catch (error) {
-    console.log(error);
     return next(CreateError(500, "Internal Server Error"));
   }
 };
@@ -52,7 +50,7 @@ export const getById = async (req, res, next) => {
 // Create Post
 export const createPost = async (req, res, next) => {
   try {
-    const foundAuthor = await User.findOne({ author: req.body.author });
+    const foundAuthor = await User.findById(req.body.user_id);
     if (!foundAuthor) {
       return next(CreateError(404, "Author not found"));
     } else {
@@ -65,7 +63,7 @@ export const createPost = async (req, res, next) => {
           author: foundAuthor,
         });
         await newPost.save();
-        return next(CreateSuccess(200, "Post created successfully!"));
+        return next(CreateSuccess(200, "Post created successfully!", newPost));
       }
     }
   } catch (error) {

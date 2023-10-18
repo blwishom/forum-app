@@ -5,6 +5,7 @@ import Dashboard from "./components/dashboard/Dashboard";
 import Login from "./components/login/Login";
 import Signup from "./components/signup/Signup";
 import CreatePost from "./components/create-post/CreatePost";
+import Post from "./components/post/Post";
 import AuthContextProvider from "./service/AuthContextProvider";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Navbar/>
             <Routes>
               <Route path="/" exact element={<Dashboard/>}/>
+              <Route path="/post/:post_id" exact element={<Post/>}/>
               <Route path="/login" exact element={<Login/>}/>
               <Route path="/signup" exact element={<Signup/>}/>
               <Route path="/create-post" exact element={<CreatePost/>}/>

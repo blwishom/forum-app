@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import './CreatePost.css';
 
 const CreatePost = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const user_id = localStorage.getItem('user_id');
   const navigate = useNavigate();
 
   const handleCreatePost = async (e) => {
@@ -13,6 +15,7 @@ const CreatePost = () => {
     const requestObject = {
       title: title,
       content: content,
+      user_id: user_id,
     };
 
     try {
@@ -27,8 +30,9 @@ const CreatePost = () => {
       if (response.ok) {
         setSuccessMessage('Post created.');
         setErrorMessage('');
-        navigate('/dashboard');
+        navigate('/');
       } else {
+        console.log(response);
         setSuccessMessage('');
         setErrorMessage('Post creation failed. Please check your information.');
       }
@@ -36,6 +40,11 @@ const CreatePost = () => {
       setSuccessMessage('');
       setErrorMessage('An error occurred. Please try again later.');
     }
+  }
+
+  const handleCancel = (e) => {
+    e.preventDefault();
+    navigate('/')
   }
 
   return (
@@ -56,7 +65,8 @@ const CreatePost = () => {
           onChange={(e) => setContent(e.target.value)}
           required
         />
-        <button type='submit'>Create Post</button>
+        <button className="create-post-btn" type='submit'>Create Post</button>
+        <button className="create-post-btn" onClick={handleCancel}>Cancel</button>
       </form>
     </div>
   )

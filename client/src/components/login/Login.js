@@ -30,9 +30,12 @@ const Login = ({ setIsLoggedIn }) => {
 
       if (response.ok) {
         const data = await response.json();
+        localStorage.setItem("user_id", data.data._id);
+        localStorage.setItem("username", data.data.username);
         updateUser(data);
         login(data);
         navigate("/");
+        setIsLoggedIn(true);
       } else {
         setSuccessMessage("");
         setErrorMessage("Login failed. Please check your information.");
@@ -55,7 +58,7 @@ const Login = ({ setIsLoggedIn }) => {
           required
         />
         <input 
-          type="text"  
+          type="password"  
           placeholder='Password' 
           onChange={(e) => setPassword(e.target.value)} 
           required

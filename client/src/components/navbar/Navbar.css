@@ -36,13 +36,14 @@ li {
   font-size: 25px;
 }
 
-li a {
+.nav-btn {
   text-decoration: none;
   color: white;
   transition: font-size 0.2s
+  cursor: pointer;
 }
 
-li a:hover {
+.nav-btn:hover {
   font-weight: bold;
   font-size: 20px;
   color: greenyellow;

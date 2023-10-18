@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom';
 import "./Dashboard.css";
-import { Link } from 'react-router-dom';
 
 function Dashboard() {
   const [errorMessage, setErrorMessage] = useState("");
   const [posts, setPosts] = useState();
+  const navigate = useNavigate();
   const getData = async (e) => {
     try {
       const response = await fetch("http://localhost:8800/api/post", {
@@ -20,6 +21,11 @@ function Dashboard() {
     }
   }
 
+  const toPost = (e, post_id) => {
+    e.preventDefault();
+    navigate(`/post/${post_id}`)
+  }
+
   useEffect(() => {
     getData();
   }, [])
@@ -32,7 +38,7 @@ function Dashboard() {
       </div>
       {!posts && <div className='post-header'>No posts found.</div>}
       {posts && posts.map((post) => (
-        <div className="post-container">
+        <div onClick={(e) => toPost(e, post._id)} className="post-container">
           <div className="post-header">
             <div className="post-author">Posted by {post.author.username}</div>
             <div className="post-title">{post.title}</div>
