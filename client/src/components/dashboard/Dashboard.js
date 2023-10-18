@@ -15,7 +15,7 @@ function Dashboard() {
       if (response.ok) {
         const data = await response.json();
         setPosts(data.data);
-      } 
+      }
     } catch (error) {
       setErrorMessage("An error occurred. Please try again later.");
     }
@@ -33,8 +33,8 @@ function Dashboard() {
   return (
     <div>
       <div className='dashboard'>
-        <h1>Dashboard</h1>
-        <Link to={'/create-post'}>Create Post</Link>
+        <h1 className='title'>Dashboard</h1>
+        <Link className='createPost' to={'/create-post'}>Create Post</Link>
       </div>
       {!posts && <div className='post-header'>No posts found.</div>}
       {posts && posts.map((post) => (
@@ -45,7 +45,7 @@ function Dashboard() {
           </div>
           <div className="post-content">{post.content}</div>
         </div>
-      ))  
+      ))
       }
     </div>
   )
