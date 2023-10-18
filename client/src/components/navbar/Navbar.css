@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Creepster';
-  src: url('/home/blair/cognixia_workspace/jumplus/forum-app/client/public/Creepster-Regular.ttf') format('truetype');
+  src: local('Creepster'), url('../../../public/Creepster-Regular.ttf') format('truetype');
   font-style: normal;
   color: purple;
 }
@@ -54,5 +54,5 @@ li {
   font-size: 50px;
   color: purple;
   font-family: 'Creepster';
-  src: url('/home/blair/cognixia_workspace/jumplus/forum-app/client/public/Creepster-Regular.ttf') format('truetype');
+  src: local('Creepster'), url('../../../public/Creepster-Regular.ttf') format('truetype');
 }
