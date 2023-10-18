@@ -6,8 +6,8 @@
   display: none;
 }
 .navbar {
-  background-color: rgb(212, 212, 212);
-  width: 100%; 
+  background-color: orange;
+  width: 100%;
   height: 45px;
   display: flex;
   justify-content: space-between;
@@ -22,19 +22,26 @@
 }
 
 li {
+  font-weight: bold;
   padding: 0 1rem;
   list-style-type: none;
+  font-size: 23px;
 }
 
 li a {
   text-decoration: none;
+  color: white;
+  transition: font-size 0.2s
 }
 
 li a:hover {
   font-weight: bold;
+  font-size: 18px;
 }
 
 .logo {
   text-decoration: none;
+  color: white;
   font: bold 1.5rem 'Roboto', sans-serif;
+  font-size: 30px;
 }
