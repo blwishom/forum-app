@@ -40,10 +40,10 @@ function Dashboard() {
       {posts && posts.map((post) => (
         <div onClick={(e) => toPost(e, post._id)} className="post-container">
           <div className="post-header">
-            <div className="post-author">Posted by {post.author.username}</div>
             <div className="post-title">{post.title}</div>
           </div>
           <div className="post-content">{post.content}</div>
+          <div className="post-author">Posted by {post.author.username}</div>
         </div>
       ))
       }

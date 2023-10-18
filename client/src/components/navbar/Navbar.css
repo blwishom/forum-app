@@ -68,3 +68,20 @@ li a {
   font-family: 'Creepster';
   src: local('Creepster'), url('../../../public/Creepster-Regular.ttf') format('truetype');
 }
+
+.post-header {
+  font-size: 30px;
+}
+
+.post-title {
+  font-size: 40px;
+}
+
+.post-content {
+  font-size: 30px;
+}
+
+.post-author {
+  font-size: 22px;
+  color:rgb(255, 81, 81);
+}
