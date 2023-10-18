@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 
 function Post() {
   const user_id = localStorage.getItem("user_id");
+  const username = localStorage.getItem("username");
   const [errorMessage, setErrorMessage] = useState("");
   const [post, setPost] = useState();
   const { post_id } = useParams();
@@ -89,6 +90,9 @@ const updateUIWithComments = (comments) => {
             <div className="post-title">{post.title}</div>
           </div>
           <div className="post-content">{post.content}</div>
+          {post.author.username === username &&
+            <Link to={'/update-post'} state={{post: post}}>Edit</Link>
+          }
         <h4>Comments</h4>
         {comments && comments.map((comment) => (
           <div className="comment-container">
