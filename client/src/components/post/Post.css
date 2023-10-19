@@ -1,3 +1,9 @@
+.comment-container {
+  display: flex;
+  border: 1px solid #ccc;
+  justify-content: space-between;
+}
+
 .comment-textarea {
   width: full;
   height: 30px;
