@@ -20,7 +20,7 @@ body {
   color: orange;
   /* position: fixed;
   background-color: red; */
-  margin-bottom: auto;
+  padding-top: 5%;
 }
 
 .createPost {
