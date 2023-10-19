@@ -1,0 +1,44 @@
+.user-post {
+  display: flex;
+  justify-content: space-between;
+  color: orange;
+}
+
+.createPost {
+  font-size: 25px;
+  font-weight: bold;
+  color: orange;
+  text-decoration: none;
+  transition: font-size 0.2s;
+  margin: 30px;
+}
+
+.createPost:hover {
+  font-size: 23px;
+  color: greenyellow;
+}
+
+.createPost a {
+  transition: font-size 0.2s;
+}
+
+.post-container {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+}
+
+.post-header {
+  align-items: center;
+}
+
+.post-title {
+  font-weight: 600;
+}
+
+.post-author {
+}
+
+.title {
+  font-size: 40px;
+  color: orange;
+}
