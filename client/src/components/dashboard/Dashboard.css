@@ -18,6 +18,9 @@ body {
   display: flex;
   justify-content: space-between;
   color: orange;
+  /* position: fixed;
+  background-color: red; */
+  margin-bottom: auto;
 }
 
 .createPost {
@@ -30,7 +33,7 @@ body {
 }
 
 .createPost:hover {
-  font-size: 23px;
+  font-size: 30px;
   color: greenyellow;
 }
 
@@ -42,7 +45,7 @@ body {
   margin-bottom: 30px;
   margin-left: 23%;
   margin-right: 23%;
-  padding: 10px;
+  padding: 12px;
   border: solid;
   border-radius: 8px;
   border-width: 10px;
@@ -70,7 +73,6 @@ body {
   color: rgb(255, 65, 65);
 }
 
-.title {
-  font-size: 40px;
-  color: orange;
+h1 {
+  font-size: 4rem;
 }

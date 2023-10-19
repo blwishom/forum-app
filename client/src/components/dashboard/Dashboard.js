@@ -33,7 +33,7 @@ function Dashboard() {
   return (
     <div>
       <div className='dashboard'>
-        <h1 className='title'>Dashboard</h1>
+        <h1>Dashboard</h1>
         <Link className='createPost' to={'/create-post'}>Create Post</Link>
       </div>
       {!posts && <div className='post-header'>No posts found.</div>}

@@ -12,7 +12,7 @@ function Navbar() {
   }
   return (
     <div className='navbar'>
-      <Link className="logo" to="/">INFORUM</Link>
+      <Link className="logo" to="/">I N F O R U M</Link>
       {username ? (
         <ul className="nav-menu">
           <li className='nav-btn'><Link to="/">Home</Link></li>

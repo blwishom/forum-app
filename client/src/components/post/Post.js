@@ -76,9 +76,9 @@ function Post() {
         {comments && comments.map((comment) => (
           <div className="comment-container">
             <div className="comment-header">
+            <div className="comment-content">{comment.content}</div>
               <div className="comment-author">Posted by {comment.author[0].username}</div>
             </div>
-            <div className="comment-content">{comment.content}</div>
           </div>
         ))}
         <form onSubmit={handleCreateComment}>
@@ -89,8 +89,8 @@ function Post() {
             onChange={(e) => setContent(e.target.value)}
             required
           />
-          <button className="comment-button">Submit</button>
         </form>
+          <button className="comment-button">Submit</button>
       </div>
       }
     </div>

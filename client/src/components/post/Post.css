@@ -1,8 +1,4 @@
-.comment-container {
-  display: flex;
-  border: 1px solid #ccc;
-  justify-content: space-between;
-}
+
 
 .comment-textarea {
   width: full;
@@ -26,8 +22,19 @@ h1 {
 }
 
 .comment-container {
+  display: block;
+  margin-bottom: 8px;
   padding: 10px;
   font-size: 20px;
+  border: none;
+}
+
+.comment-content {
+  font-size: 30px;
+}
+
+.comment-author {
+  color: rgb(255, 65, 65);
 }
 
 .edit-link {
@@ -54,4 +61,41 @@ h4 {
   font-size: 25px;
   color: orange;
   margin-bottom: 2px;
+}
+
+.comment-textarea {
+  margin-bottom: 2px;
+  border: solid;
+  border-color: orange;
+  border-width: 5px;
+  border-radius: 8px;
+  width:500px;
+  height: 100px;
+  font-size: 23px;
+}
+
+.comment-button {
+  height: 40px;
+  width: auto;
+  font-family: 'Creepster';
+  src: local('Creepster'), url('../../../public/Creepster-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-size: 22px;
+  background-color: white;
+  border: solid;
+  border-color: orange;
+  border-radius: 8px;
+  border-width: 5px;
+  cursor: pointer;
+  margin-bottom: 5%;
+  color: purple;
+}
+
+.comment-button:hover {
+  height: 43px;
+  width: 100px;
+  font-size: 25px;
+  background-color: yellowgreen;
+  transition: 0.2s;
 }
