@@ -5,8 +5,9 @@
   height: 30px;
 }
 
-h1 {
+.post {
   color: orange;
+  padding-top: 5%;
 }
 
 .post-author {
