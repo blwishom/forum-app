@@ -7,6 +7,7 @@ import Signup from "./components/signup/Signup";
 import Post from "./components/post/Post";
 import CreatePost from "./components/create-post/CreatePost";
 import UpdatePost from "./components/update-post/UpdatePost";
+import UserPost from "./components/user-post/UserPost";
 import AuthContextProvider from "./service/AuthContextProvider";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
               <Route path="/signup" exact element={<Signup/>}/>
               <Route path="/create-post" exact element={<CreatePost/>}/>
               <Route path="/update-post" exact element={<UpdatePost/>}/>
+              <Route path="/post" exact element={<UserPost/>}/>
             </Routes>
           </AuthContextProvider>
         </div>

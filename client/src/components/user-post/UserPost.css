@@ -1,20 +1,4 @@
-@font-face {
-  font-family: 'Creepster';
-  src: local('Creepster'), url('../../../public/Creepster-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  color: purple;
-}
-
-body {
-  background-color: rgb(83, 0, 83);
-  color: white;
-  font-family: 'Creepster';
-  src: local('Creepster'), url('../../../public/Creepster-Regular.ttf') format('truetype');
-}
-
-
-.dashboard {
+.user-post {
   display: flex;
   justify-content: space-between;
   color: orange;
@@ -45,7 +29,6 @@ body {
 
 .post-header {
   align-items: center;
-  cursor: pointer;
 }
 
 .post-title {

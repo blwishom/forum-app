@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
+import "./Post.css";
 
 function Post() {
   const user_id = localStorage.getItem("user_id");
@@ -9,7 +10,6 @@ function Post() {
   const { post_id } = useParams();
   const [comments, setComments] = useState();
   const [content, setContent] = useState("");
-  const navigate = useNavigate();
 
   const getPost = async (e) => {
     try {
@@ -43,40 +43,19 @@ function Post() {
         body: JSON.stringify(requestObject),
       });
 
-      if (response.ok) {
-        // Fetch the updated comments for the post
-        const commentsResponse = await fetch(`http://localhost:8800/api/post/${post_id}/comment`);
-        const { comments } = await commentsResponse.json();
-        // Update your UI with the new comments
-        updateUIWithComments(comments);
-        navigate(`/post/${post_id}}`);
-      } else {
+      if (!response.ok) {
         setErrorMessage('Comment creation failed. Please check your information.');
-      }
+        alert(errorMessage);
+      } 
     } catch (error) {
       setErrorMessage('An error occurred. Please try again later.');
+      alert(errorMessage);
     }
   }
 
-  // Function to update UI with comments
-const updateUIWithComments = (comments) => {
-  // Assuming 'commentsContainer' is the container where comments are displayed
-  const commentsContainer = document.getElementById('commentsContainer');
-
-  // Clear existing comments
-  commentsContainer.innerHTML = '';
-
-  // Render the updated comments
-  comments.forEach((comment) => {
-    const commentElement = document.createElement('div');
-    commentElement.innerHTML = `<p>${comment.content}</p>`;
-    commentsContainer.appendChild(commentElement);
-  });
-};
-
   useEffect(() => {
     getPost();
-  }, [])
+  }, [comments])
 
   return (
     <div>
@@ -84,35 +63,39 @@ const updateUIWithComments = (comments) => {
         <h1>Post</h1>
       </div>
       {post && comments &&
-      <div className="post-container">
+        <div className="post-container">
           <div className="post-header">
             <div className="post-author">Posted by {post.author.username}</div>
             <div className="post-title">{post.title}</div>
           </div>
           <div className="post-content">{post.content}</div>
           {post.author.username === username &&
-            <Link to={'/update-post'} state={{post: post}}>Edit</Link>
+            <Link to={'/update-post'} state={{ post: post }}>Edit</Link>
           }
-        <h4>Comments</h4>
-        {comments && comments.map((comment) => (
-          <div className="comment-container">
-            <div className="comment-header">
-              <div className="comment-author">Posted by {comment.author[0].username}</div>
+          <h4>Comments</h4>
+          {comments && comments.map((comment) => (
+            <div className="comment-container">
+              <div>
+                <div className="comment-header">
+                  <div className="comment-author">Posted by {comment.author[0].username}</div>
+                </div>
+                <div className="comment-content">{comment.content}</div>
+              </div>
             </div>
-            <div className="comment-content">{comment.content}</div>
-          </div>
-        ))}
-        <form onSubmit={handleCreateComment}>
-          <textarea 
-            className="comment-textarea" 
-            type="text"
-            placeholder="Add a comment..."
-            onChange={(e) => setContent(e.target.value)}
-            required
-          />
-          <button className="comment-button">Submit</button>
-        </form>
-      </div>
+          ))}
+          {username && 
+            <form onSubmit={handleCreateComment}>
+              <textarea
+                className="comment-textarea"
+                type="text"
+                placeholder="Add a comment..."
+                onChange={(e) => setContent(e.target.value)}
+                required
+              />
+              <button className="comment-button">Submit</button>
+            </form>
+          }
+        </div>
       }
     </div>
   )
