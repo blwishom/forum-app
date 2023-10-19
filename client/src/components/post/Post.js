@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
+import "./Post.css"
 
 function Post() {
   const user_id = localStorage.getItem("user_id");
@@ -84,16 +85,16 @@ const updateUIWithComments = (comments) => {
         <h1>Post</h1>
       </div>
       {post && comments &&
-      <div className="post-container">
+      <div className="post-container2">
           <div className="post-header">
             <div className="post-author">Posted by {post.author.username}</div>
             <div className="post-title">{post.title}</div>
           </div>
           <div className="post-content">{post.content}</div>
           {post.author.username === username &&
-            <Link to={'/update-post'} state={{post: post}}>Edit</Link>
+            <Link className='edit-link' to={'/update-post'} state={{post: post}} style={{ color: 'orange' }}>Edit</Link>
           }
-        <h4>Comments</h4>
+        <h4>Comments:</h4>
         {comments && comments.map((comment) => (
           <div className="comment-container">
             <div className="comment-header">
@@ -103,8 +104,8 @@ const updateUIWithComments = (comments) => {
           </div>
         ))}
         <form onSubmit={handleCreateComment}>
-          <textarea 
-            className="comment-textarea" 
+          <textarea
+            className="comment-textarea"
             type="text"
             placeholder="Add a comment..."
             onChange={(e) => setContent(e.target.value)}

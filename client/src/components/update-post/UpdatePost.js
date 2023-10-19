@@ -50,7 +50,7 @@ const UpdatePost = () => {
 
   return (
     <div className='update-post-container centered'>
-      <h1 style={{ color: 'orange'}}>Update Post</h1>
+      <h1 style={{ color: 'purple'}}>Update Post</h1>
       {errorMessage && <div className='error-message'>{errorMessage}</div>}
       {successMessage && <div className='success-message'>{successMessage}</div>}
       <form onSubmit={handleUpdatePost} className='update-post-form'>

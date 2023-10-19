@@ -1,5 +1,5 @@
 .update-post-container {
-  width: 500px; 
+  width: 500px;
   height: 650px;
   padding: 2rem 1rem;
   margin: 100px auto;
@@ -10,8 +10,8 @@
 }
 
 h1 {
-  font-size: 2rem;
-  color: black;
+  font-size: 3rem;
+  color: orange;
   margin-top: 1.2rem;
 }
 
@@ -45,7 +45,7 @@ h1 {
   outline: none;
   border: none;
   width: 90%;
-  color: white; 
+  color: white;
   cursor: pointer;
   background-color: rgb(0, 144, 228);
 }
