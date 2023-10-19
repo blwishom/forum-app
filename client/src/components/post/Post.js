@@ -10,8 +10,6 @@ function Post() {
   const { post_id } = useParams();
   const [comments, setComments] = useState();
   const [content, setContent] = useState("");
-  const [commentEditStates, setCommentEditStates] = useState({});
-  const navigate = useNavigate();
 
   const getPost = async (e) => {
     try {
@@ -45,17 +43,13 @@ function Post() {
         body: JSON.stringify(requestObject),
       });
 
-      if (response.ok) {
-        // Fetch the updated comments for the post
-        const commentsResponse = await fetch(`http://localhost:8800/api/post/${post_id}/comment`);
-        const { comments } = await commentsResponse.json();
-        // Update your UI with the new comments
-        navigate(`/post/${post_id}}`);
-      } else {
+      if (!response.ok) {
         setErrorMessage('Comment creation failed. Please check your information.');
-      }
+        alert(errorMessage);
+      } 
     } catch (error) {
       setErrorMessage('An error occurred. Please try again later.');
+      alert(errorMessage);
     }
   }
 
@@ -89,16 +83,18 @@ function Post() {
               </div>
             </div>
           ))}
-          <form onSubmit={handleCreateComment}>
-            <textarea
-              className="comment-textarea"
-              type="text"
-              placeholder="Add a comment..."
-              onChange={(e) => setContent(e.target.value)}
-              required
-            />
-            <button className="comment-button">Submit</button>
-          </form>
+          {username && 
+            <form onSubmit={handleCreateComment}>
+              <textarea
+                className="comment-textarea"
+                type="text"
+                placeholder="Add a comment..."
+                onChange={(e) => setContent(e.target.value)}
+                required
+              />
+              <button className="comment-button">Submit</button>
+            </form>
+          }
         </div>
       }
     </div>

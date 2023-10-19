@@ -45,6 +45,7 @@ body {
 
 .post-header {
   align-items: center;
+  cursor: pointer;
 }
 
 .post-title {
