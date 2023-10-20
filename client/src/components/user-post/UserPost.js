@@ -35,8 +35,8 @@ function UserPost() {
   return (
     <div>
       <div className='user-post'>
-        <h1 className='title'>Post</h1>
-        <Link className='createPost' to={'/create-post'}>Create Post</Link>
+        <h1>Post</h1>
+        <Link id='createPost' to={'/create-post'}>Create Post</Link>
       </div>
       {!posts && <div className='post-header'>No posts found.</div>}
       {posts && posts.map((post) => (

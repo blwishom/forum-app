@@ -5,7 +5,7 @@
   padding-top: 2%;
 }
 
-.createPost {
+#createPost {
   font-size: 25px;
   font-weight: bold;
   color: orange;
@@ -14,12 +14,12 @@
   margin: 30px;
 }
 
-.createPost:hover {
+#createPost:hover {
   font-size: 23px;
   color: greenyellow;
 }
 
-.createPost a {
+#createPost a {
   transition: font-size 0.2s;
 }
 
