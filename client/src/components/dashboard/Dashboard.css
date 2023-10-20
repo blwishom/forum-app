@@ -18,12 +18,10 @@ body {
   display: flex;
   justify-content: space-between;
   color: orange;
-  /* position: fixed;
-  background-color: red; */
-  padding-top: 5%;
+  padding-top: 3%;
 }
 
-.createPost {
+#createPost {
   font-size: 25px;
   font-weight: bold;
   color: orange;
@@ -32,7 +30,7 @@ body {
   margin: 30px;
 }
 
-.createPost:hover {
+#createPost:hover {
   font-size: 30px;
   color: greenyellow;
 }
@@ -41,18 +39,18 @@ body {
   transition: font-size 0.2s;
 }
 
-.post-container {
-  margin-bottom: 30px;
+#post-container {
+  margin-bottom: 2%;
   margin-left: 23%;
   margin-right: 23%;
   padding: 12px;
   border: solid;
   border-radius: 8px;
-  border-width: 10px;
+  border-width: 8px;
   cursor: pointer;
 }
 
-.post-container:hover {
+#post-container:hover {
   transition: 0.2s;
   margin-left: 22%;
   margin-right: 22%;

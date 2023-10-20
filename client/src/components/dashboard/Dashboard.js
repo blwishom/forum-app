@@ -34,16 +34,18 @@ function Dashboard() {
     <div>
       <div className='dashboard'>
         <h1>Dashboard</h1>
-        <Link className='createPost' to={'/create-post'}>Create Post</Link>
+        <Link id='createPost' to={'/create-post'}>Create Post</Link>
       </div>
       {!posts && <div className='post-header'>No posts found.</div>}
       {posts && posts.map((post) => (
-        <div onClick={(e) => toPost(e, post._id)} className="post-container">
-          <div className="post-header">
-            <div className="post-title">{post.title}</div>
+        <div onClick={(e) => toPost(e, post._id)} id="post-container">
+          <div>
+            <div className="post-header">
+              <div className="post-title">{post.title}</div>
+            </div>
+            <div className="post-content">{post.content}</div>
+            <div className="post-author">Posted by {post.author.username}</div>
           </div>
-          <div className="post-content">{post.content}</div>
-          <div className="post-author">Posted by {post.author.username}</div>
         </div>
       ))
       }

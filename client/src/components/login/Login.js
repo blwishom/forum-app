@@ -51,16 +51,16 @@ const Login = ({ setIsLoggedIn }) => {
       <h1>Login</h1>
       {errorMessage && <div className='error-message'>{errorMessage}</div>}
       <form onSubmit={handleLogin} className="signup-form">
-        <input 
-          type="text" 
-          placeholder='Email' 
-          onChange={(e) => setEmail(e.target.value)} 
+        <input
+          type="text"
+          placeholder='Email'
+          onChange={(e) => setEmail(e.target.value)}
           required
         />
-        <input 
-          type="password"  
-          placeholder='Password' 
-          onChange={(e) => setPassword(e.target.value)} 
+        <input
+          type="password"
+          placeholder='Password'
+          onChange={(e) => setPassword(e.target.value)}
           required
         />
         <button className='login-btn'>Login</button>
@@ -72,4 +72,4 @@ const Login = ({ setIsLoggedIn }) => {
   )
 }
 
-export default Login; 
+export default Login;
