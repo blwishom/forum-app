@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: rgb(83, 0, 83);
+  background-color: black;
   color: white;
   font-family: 'Creepster';
   src: local('Creepster'), url('../../../public/Creepster-Regular.ttf') format('truetype');
@@ -48,6 +48,8 @@ body {
   border-radius: 8px;
   border-width: 8px;
   cursor: pointer;
+  overflow: auto;
+  word-wrap: break-word;
 }
 
 #post-container:hover {
