@@ -20,6 +20,8 @@
   margin-right: 15%;
   padding: 10px;
   cursor: auto;
+  overflow: auto;
+  word-wrap: break-word;
 }
 
 .comment-container {
@@ -28,6 +30,8 @@
   padding: 10px;
   font-size: 20px;
   border: none;
+  overflow: auto;
+  word-wrap: break-word;
 }
 
 .comment-content {
