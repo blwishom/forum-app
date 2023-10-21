@@ -60,41 +60,52 @@ function Post() {
   return (
     <div>
       <div className='post'>
-        <h1>Post</h1>
+        {post && (
+          <h1>{post.author.username}'s Post</h1>
+        )}
       </div>
-      {post && comments &&
-      <div className="post-container2">
+      {post && comments && (
+        <div className="post-container2">
           <div className="post-header">
             <div className="post-author">Posted by {post.author.username}</div>
             <div className="post-title">{post.title}</div>
           </div>
           <div className="post-content">{post.content}</div>
-          {post.author.username === username &&
-            <Link className='edit-link' to={'/update-post'} state={{post: post}} style={{ color: 'orange' }}>Edit</Link>
-          }
-        <h4>Comments:</h4>
-        {comments && comments.map((comment) => (
-          <div className="comment-container">
-            <div className="comment-header">
-            <div className="comment-content">{comment.content}</div>
-              <div className="comment-author">Posted by {comment.author[0].username}</div>
+          {post.author.username === username && (
+            <Link
+              className='edit-link'
+              to={'/update-post'}
+              state={{ post: post }}
+              style={{ color: 'orange' }}
+            >
+              Edit
+            </Link>
+          )}
+          <h4>Comments:</h4>
+          {comments && comments.map((comment) => (
+            <div className="comment-container">
+              <div className="comment-header">
+                <div className="comment-content">{comment.content}</div>
+                <div className="comment-author">
+                  Posted by {comment.author[0]?.username} {}
+                </div>
+              </div>
             </div>
-          </div>
-        ))}
-        <form onSubmit={handleCreateComment}>
-          <textarea
-            className="comment-textarea"
-            type="text"
-            placeholder="Add a comment..."
-            onChange={(e) => setContent(e.target.value)}
-            required
-          />
-        </form>
-          <button className="comment-button">Submit</button>
-      </div>
-      }
+          ))}
+          <form onSubmit={handleCreateComment}>
+            <textarea
+              className="comment-textarea"
+              type="text"
+              placeholder="Add a comment..."
+              onChange={(e) => setContent(e.target.value)}
+              required
+            />
+          </form>
+            <button className="comment-button">Submit</button>
+        </div>
+      )}
     </div>
-  )
+  );
 }
 
 export default Post

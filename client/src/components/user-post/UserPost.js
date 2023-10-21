@@ -35,7 +35,7 @@ function UserPost() {
   return (
     <div>
       <div className='user-post'>
-        <h1>Post</h1>
+        <h1>My Posts</h1>
         <Link id='createPost' to={'/create-post'}>Create Post</Link>
       </div>
       {!posts && <div className='post-header'>No posts found.</div>}
