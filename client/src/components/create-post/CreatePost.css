@@ -1,6 +1,6 @@
 .create-post-container {
-  width: 500px; 
-  height: 650px;
+  width: 500px;
+  height: 600px;
   padding: 2rem 1rem;
   margin: 100px auto;
   background-color: whitesmoke;
@@ -9,10 +9,9 @@
   box-shadow: 0 20px 35px rgba(0,0,0,0.1);
 }
 
-h1 {
-  font-size: 2rem;
-  color: black;
-  margin-top: 1.2rem;
+#create-post {
+  font-size: 3rem;
+  margin-top: -0.3rem;
 }
 
 .create-post-input {
@@ -24,6 +23,7 @@ h1 {
   margin-bottom: 10px;
   border-radius: 10px;
   background-color: white;
+  font-size: 23px;
 }
 .create-post-textarea {
   width: 92%;
@@ -35,23 +35,30 @@ h1 {
   border-radius: 10px;
   overflow: auto;
   background-color: white;
+  font-size: 23px;
 }
 
 .create-post-btn {
-  font-size: 1rem;
-  margin-top: 1rem;
+  font-size: 1.5rem;
+  margin-top: 1.8rem;
+  margin: 5px;
   padding: 10px 0;
   border-radius: 10px;
   outline: none;
   border: none;
-  width: 90%;
-  color: white; 
+  width: 40%;
+  color: white;
   cursor: pointer;
-  background-color: rgb(0, 144, 228);
+  background-color: yellowgreen;
+  font-family: 'Creepster';
+  src: local('Creepster'), url('../../../public/Creepster-Regular.ttf') format('truetype');
+  font-style: normal;
 }
 
 .create-post-btn:hover {
-  background-color:rgb(49, 49, 255);
+  background-color: yellowgreen;
+  font-size: 1.8rem;
+  transition: font-size 0.2s;
 }
 
 .error-message {
