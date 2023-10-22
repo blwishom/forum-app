@@ -1,5 +1,5 @@
 body {
-    padding-top: 60px; /* Adjust this value to match the height of your navbar */
+    padding-top: 60px;
 }
 
 .navbar {
@@ -8,14 +8,11 @@ body {
     align-items: center;
     top: 0;
     background-color: orange;
-    width: 100%;
+    width: 98.7%;
     height: 70px;
     display: flex;
     padding: 10px;
-    margin-left: -19px;
     border-style: solid;
-    border-bottom-color: white;
-    border-top: 0px;
 }
 
 .login-container {
