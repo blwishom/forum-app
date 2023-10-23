@@ -100,8 +100,10 @@ function Post() {
               onChange={(e) => setContent(e.target.value)}
               required
             />
+            <div>
+              <button className="comment-button">Submit</button>
+            </div>
           </form>
-            <button className="comment-button">Submit</button>
         </div>
       )}
     </div>
