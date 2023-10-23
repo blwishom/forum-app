@@ -68,8 +68,8 @@ function UserPost() {
             </div>
             <div className="post-content">{post.content}</div>
             <div className="post-author">Posted by {post.author.username}</div>
+              <button onClick={(e) => deletePost(e, post._id)}>Delete Post</button>
           </div>
-          <button onClick={(e) => deletePost(e, post._id)}>Delete Post</button>
         </>
       ))
       }
