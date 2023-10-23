@@ -32,7 +32,6 @@
   border: solid;
   border-radius: 8px;
   border-width: 8px;
-  cursor: pointer;
   overflow: auto;
   word-wrap: break-word;
 }
@@ -50,6 +49,7 @@
 
 .post-header {
   align-items: center;
+  cursor: pointer;
 }
 
 .post-title {

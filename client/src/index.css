@@ -13,3 +13,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.post-author {
+  font-size: 20px;
+  color:rgb(255, 81, 81);
+}
