@@ -46,6 +46,7 @@ function UserPost() {
           </div>
           <div className="post-content">{post.content}</div>
           <div className="post-author">Posted by {post.author.username}</div>
+          <button>Delete Post</button>
         </div>
       ))
       }
