@@ -63,3 +63,30 @@
   font-size: 40px;
   color: orange;
 }
+
+button {
+  height: auto;
+  width: auto;
+  font-family: 'Creepster';
+  src: local('Creepster'), url('../../../public/Creepster-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-size: 22px;
+  background-color: white;
+  border: solid;
+  border-color: orange;
+  border-radius: 8px;
+  border-width: 5px;
+  cursor: pointer;
+  margin-top: 25px;
+  margin-bottom: 2px;
+  color: purple;
+}
+
+button:hover {
+  height: auto;
+  width: auto;
+  font-size: 25px;
+  border-color: red;
+  transition: 0.2s;
+}
