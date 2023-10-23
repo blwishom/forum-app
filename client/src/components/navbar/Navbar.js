@@ -15,6 +15,7 @@ function Navbar() {
       <Link className="logo" to="/">I N F O R U M</Link>
       {username ? (
         <ul className="nav-menu">
+          <li className='nav-hello'>Hello, {username}!</li>
           <li className='nav-btn'><Link to="/">Home</Link></li>
           <li className='nav-btn'><Link to="/post">Posts</Link></li>
           <li className='nav-btn' onClick={handleLogout}>Logout</li>
