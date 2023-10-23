@@ -81,9 +81,6 @@ li a {
 .post-content {
   font-size: 30px;
   margin-bottom: 2%;
-}
-
-.post-author {
-  font-size: 22px;
-  color:rgb(255, 81, 81);
+  margin-top: 2%;
+  margin-left: 2%;
 }

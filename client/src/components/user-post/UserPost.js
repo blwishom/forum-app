@@ -61,16 +61,14 @@ function UserPost() {
       </div>
       {!posts && <div className='post-header'>No posts found.</div>}
       {posts && posts.map((post) => (
-        <>
-          <div onClick={(e) => toPost(e, post._id)} className="post-container">
-            <div className="post-header">
-              <div className="post-title">{post.title}</div>
-            </div>
-            <div className="post-content">{post.content}</div>
-            <div className="post-author">Posted by {post.author.username}</div>
+        <div className="post-container">
+          <div onClick={(e) => toPost(e, post._id)} className="post-header">
+            <div className="post-title">{post.title}</div>
           </div>
+          <div className="post-content">{post.content}</div>
+          <div className="post-author">Posted by {post.author.username}</div>
           <button onClick={(e) => deletePost(e, post._id)}>Delete Post</button>
-        </>
+        </div>
       ))
       }
     </div>
